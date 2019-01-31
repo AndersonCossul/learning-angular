@@ -1,3 +1,8 @@
-<h1 [class.gray]="h1GrayStyle">Home</h1>
+<h1>Home</h1>
 
-<button (click)="click()">Click me</button>
+<ul *ngIf="users">
+  <li *ngFor="let user of users.data">
+    <img [src]="user.avatar" [alt]="user.first_name">
+    <p>{{ user.first_name }} {{ user.last_name }}</p>
+  </li>
+</ul>
